@@ -1,0 +1,62 @@
+{
+  "name": "bubbleup-plugin-test-mocha",
+  "version": "0.0.0",
+  "description": "Mocha test plugin for bubbleup",
+  "main": "lib/index.js",
+  "files": [
+    "bubbleup-plugin-test-mocha/index.js"
+  ],
+  "scripts": {
+    "commit": "git-cz",
+    "changelog": "conventional-changelog --infile CHANGELOG.md --same-file --release-count 0 --preset angular",
+    "postchanglog": "git add CHANGELOG.md && git commit -m chore(CHANGELOG): append to changelog && git push origin master",
+    "lint": "eslint bubbleup-plugin-test-mocha/*.js",
+    "unit-test": "bubbleup test --pluginsPath .",
+    "test": "npm run lint && npm run unit-test",
+    "release-patch": "npm run changelog && np patch",
+    "release-minor": "npm run changelog && np minor",
+    "release-major": "npm run changelog && np major"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TylorS/bubble-plugin-test-mocha.git"
+  },
+  "keywords": [
+    "bubbleup-plugin",
+    "bubbleup-plugin-test",
+    "mocha",
+    "test",
+    "runner"
+  ],
+  "author": "Tylor Steinberger <tlsteinberger167@gmail.com> (github.com/TylorS)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TylorS/bubble-plugin-test-mocha/issues"
+  },
+  "homepage": "https://github.com/TylorS/bubble-plugin-test-mocha#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    },
+    "ghooks": {
+      "commit-msg": "node ./node_modules/.bin/validate-commit-msg"
+    }
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "commitizen": "^2.8.5",
+    "conventional-changelog-cli": "^1.2.0",
+    "cz-conventional-changelog": "^1.1.7",
+    "eslint": "^3.2.2",
+    "eslint-config-standard": "^5.3.5",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-standard": "^2.0.0",
+    "ghooks": "^1.3.2",
+    "np": "^2.8.0",
+    "validate-commit-msg": "^2.6.1"
+  },
+  "dependencies": {
+    "bubbleup": "0.0.1",
+    "mocha": "^3.0.2"
+  }
+}
