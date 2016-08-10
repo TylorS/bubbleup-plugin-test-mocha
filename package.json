@@ -2,7 +2,7 @@
   "name": "bubbleup-plugin-test-mocha",
   "version": "0.0.1",
   "description": "Mocha test plugin for bubbleup",
-  "main": "lib/index.js",
+  "main": "bubbleup-plugin-test-mocha/index.js",
   "files": [
     "bubbleup-plugin-test-mocha/index.js"
   ],
