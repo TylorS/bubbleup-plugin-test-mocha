@@ -9,7 +9,7 @@
   "scripts": {
     "commit": "git-cz",
     "changelog": "conventional-changelog --infile CHANGELOG.md --same-file --release-count 0 --preset angular",
-    "postchangelog": "git add CHANGELOG.md && git commit -m chore(CHANGELOG): append to changelog && git push origin master",
+    "postchangelog": "git add CHANGELOG.md && git commit -m 'chore(CHANGELOG): append to changelog' && git push origin master",
     "lint": "eslint bubbleup-plugin-test-mocha/*.js",
     "unit-test": "bubbleup test --pluginsPath .",
     "test": "npm run lint && npm run unit-test",
